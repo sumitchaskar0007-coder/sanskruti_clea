@@ -1,0 +1,134 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5a837c5 (Updated .gitignore)
+# ========================
+# Dependencies
+# ========================
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# ========================
+<<<<<<< HEAD
+# Logs
+# ========================
+logs/
+=======
+# Logs
+logs
+>>>>>>> d6d1840 (update build)
+=======
+# Logs
+# ========================
+logs/
+>>>>>>> 5a837c5 (Updated .gitignore)
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+# ========================
+# Build / Production
+# ========================
+
+# ========================
+# Environment files
+# ========================
+.env
+.env.*
+*.local
+
+# ========================
+# OS files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Editor / IDE
+# ========================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+=======
+lerna-debug.log*
+=======
+>>>>>>> 5a837c5 (Updated .gitignore)
+
+# ========================
+# Build / Production
+# ========================
+
+
+# ========================
+# Environment files
+# ========================
+.env
+.env.*
+*.local
+
+# ========================
+# OS files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Editor / IDE
+# ========================
+.vscode/*
+!.vscode/extensions.json
+<<<<<<< HEAD
+.idea
+.DS_Store
+>>>>>>> d6d1840 (update build)
+=======
+.idea/
+>>>>>>> 5a837c5 (Updated .gitignore)
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5a837c5 (Updated .gitignore)
+# ========================
+# Misc
+# ========================
+coverage/
+*.tgz
+*.gz
+*.zip
+<<<<<<< HEAD
+
+# ========================
+# Optional (uncomment if needed)
+# ========================
+# public/uploads/
+# database.sqlite
+=======
+
+
+
+
+
+
+
+
+>>>>>>> d6d1840 (update build)
+=======
+
+# ========================
+# Optional (uncomment if needed)
+# ========================
+# public/uploads/
+# database.sqlite
+>>>>>>> 5a837c5 (Updated .gitignore)
