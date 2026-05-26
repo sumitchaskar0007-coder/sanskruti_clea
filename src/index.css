@@ -6,13 +6,15 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply text-gray-800 antialiased;
   }
 }
+
 body {
-  padding-top: 110px; /* Adjust 150–180 based on your navbar height */
+  padding-top: 110px;
+  /* Adjust 150–180 based on your navbar height */
 }
 
 
@@ -20,23 +22,28 @@ body {
   .btn-primary {
     @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl;
   }
-  
+
   .btn-secondary {
     @apply bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary;
   }
-  
+
   .section-padding {
     @apply py-16 md:py-24;
   }
-  
+
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
 @keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .animate-scroll {
@@ -44,11 +51,58 @@ body {
   animation: scroll 30s linear infinite;
 }
 
+/* frontend/src/index.css - Add these styles */
 
+/* Rich Text Editor Customization */
+.rich-text-editor .ql-container {
+  font-size: 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
 
+.rich-text-editor .ql-editor {
+  min-height: 300px;
+}
 
+.rich-text-editor .ql-toolbar {
+  border-radius: 8px 8px 0 0;
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
 
+.rich-text-editor .ql-container {
+  border-radius: 0 0 8px 8px;
+  border-color: #e5e7eb;
+}
 
+/* Prose styles for blog content */
+.prose blockquote p:first-of-type::before {
+  content: '"';
+  font-size: 2em;
+  line-height: 0;
+  vertical-align: -0.4em;
+}
 
+.prose blockquote p:last-of-type::after {
+  content: '"';
+  font-size: 2em;
+  line-height: 0;
+  vertical-align: -0.4em;
+}
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

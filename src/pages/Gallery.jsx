@@ -40,8 +40,8 @@ const Gallery = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white pt-24 pb-12">
       {/* SEO */}
       <Helmet>
-        <title>Gallery - Jadhavar International School</title>
-        <meta name="description" content="Explore our photo gallery showcasing the best moments and events from Jadhavar International School & Jr. College. Discover our categories and memorable events." />
+        <title>Gallery - Sanskruti Techno School</title>
+        <meta name="description" content="Explore our photo gallery showcasing the best moments and events from Sanskruti Techno School. Discover our categories and memorable events." />
       </Helmet>
 
       <div className="container mx-auto px-4">
@@ -51,7 +51,7 @@ const Gallery = () => {
             Our Photo Gallery
           </h1>
           <p className="text-lg text-blue-700 max-w-2xl mx-auto">
-            Explore memorable moments, events, and activities at Jadhavar International School & Jr. College
+            Explore memorable moments, events, and activities at Sanskruti Techno School
           </p>
         </div>
 

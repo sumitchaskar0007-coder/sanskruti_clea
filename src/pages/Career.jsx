@@ -102,7 +102,7 @@ const Career = () => {
               </svg>
             </div>
             <h1 className="text-4xl font-bold text-blue-900 mb-4">
-              Careers at Jadhavar International
+              Careers at Sanskruti Techno School
             </h1>
             <p className="text-lg text-blue-700 max-w-2xl mx-auto">
               Join our team of dedicated educators and staff to shape the future of young minds

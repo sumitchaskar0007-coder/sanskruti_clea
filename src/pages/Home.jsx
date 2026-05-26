@@ -24,9 +24,9 @@ const Home = () => {
     const steps = [
       {
         id: 1,
-        title: "Counsellor Interaction",
+        title: "Counselor Interaction",
         description:
-          "Book a one-on-one online counselling session with our experts to understand the admission process and curriculum.",
+          "Book a one-on-one online counseling session with our experts to understand the admission process and curriculum.",
       },
       {
         id: 2,
@@ -38,7 +38,7 @@ const Home = () => {
         id: 3,
         title: "Document Submission",
         description:
-          "Submit the completed admission form along with the required documents for a smooth enrollment process.",
+          "Submit the completed admission form along with the required documents for a smooth enrolment process.",
       },
       {
         id: 4,
@@ -79,7 +79,7 @@ const Home = () => {
               </h3>
 
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Sanskruti Techno School simplifies the admission process for parents. Follow the steps below to enroll your child in a futuristic learning environment.
+                Sanskruti Techno School simplifies the admission process for parents. Follow the steps below to enrol your child in a futuristic learning environment.
               </p>
 
               <Link

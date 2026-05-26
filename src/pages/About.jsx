@@ -196,7 +196,7 @@ const About = () => {
 
                 <p className="mt-4 md:mt-6 text-gray-700 leading-relaxed text-justify text-sm md:text-base">
                   "Education for strength, wisdom and intellect" — with this vision,
-                  Jadhavar International School (CBSE) has emerged as a knowledge hub
+                  Sanskruti Techno School has emerged as a knowledge hub
                   providing value-based education that nurtures disciplined, confident
                   and capable young minds. Situated in a rural region, the school
                   empowers students to become nation builders through strong academics,

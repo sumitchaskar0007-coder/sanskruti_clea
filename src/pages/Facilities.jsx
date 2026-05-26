@@ -4,67 +4,67 @@ import { motion } from "framer-motion";
 const FacilitiesPage = () => {
     const facilities = [
         {
-            title: "Smart Classrooms",
+            title: "Science Laboratory",
             description:
-                "Digitally equipped classrooms with smart boards, projectors, and interactive learning tools for better understanding.",
-            image: "/facilities/Classroom_1.jpg",
-            alt: "Smart digital classroom with projector and students",
+                "Well-equipped laboratories designed for practical experiments, observation, and scientific learning.",
+            image: "/images/Facilities/lab.jpeg",
+            alt: "Well-equipped school science laboratory",
         },
         {
-            title: "Science Laboratories",
+            title: "Physics Laboratory",
             description:
-                "Well-maintained Physics, Chemistry, and Biology labs designed for practical experiments and scientific learning.",
-            image: "/facilities/laboratory_lab.jpg",
-            alt: "Students performing experiments in modern science laboratory",
+                "Dedicated practical space with instruments and seating arranged for hands-on physics activities.",
+            image: "/images/Facilities/WhatsApp Image 2026-05-26 at 2.04.13 PM.jpeg",
+            alt: "School physics laboratory with practical equipment",
         },
         {
-            title: "Computer Lab",
+            title: "Chemistry Laboratory",
             description:
-                "Advanced computer lab with high-speed internet and updated software to enhance digital skills.",
-            image: "/facilities/computer_lab.jpg",
-            alt: "Computer lab with multiple desktops and students working",
+                "Organized lab benches, apparatus, and safety resources support guided chemistry experiments.",
+            image: "/images/Facilities/WhatsApp Image 2026-05-26 at 2.04.13 PM (1).jpeg",
+            alt: "School chemistry laboratory with experiment tables",
         },
         {
-            title: "Library",
+            title: "Activity Room",
             description:
-                "A peaceful library with academic books, reference materials, and digital study resources for all classes.",
-            image: "/facilities/Library.jpg",
-            alt: "School library with bookshelves and reading space",
+                "A creative activity space where students explore art, language, teamwork, and classroom projects.",
+            image: "/images/Facilities/WhatsApp Image 2026-05-26 at 2.04.12 PM (1).jpeg",
+            alt: "School activity room with learning materials",
         },
         {
-            title: "Sports & Playground",
+            title: "Creative Display Area",
             description:
-                "Large playground for football, cricket, athletics, yoga, and other physical activities promoting overall growth.",
-            image: "/facilities/sport1.jpg",
-            alt: "Students playing sports on large school playground",
+                "Student work and theme-based displays encourage creativity, expression, and active participation.",
+            image: "/images/Facilities/events.jpeg",
+            alt: "Student creative display board at school",
         },
         {
-            title: "Transportation",
+            title: "Art and Language Corner",
             description:
-                "Safe and reliable bus service with GPS tracking system and trained staff ensuring comfortable travel.",
-            image: "/facilities/bus1.jpg",
-            alt: "School bus transportation facility",
+                "Colorful learning displays help students build vocabulary, confidence, and creative expression.",
+            image: "/images/Facilities/WhatsApp Image 2026-05-26 at 2.04.14 PM (1).jpeg",
+            alt: "Colorful art and language display board",
         },
         {
-            title: "CCTV Surveillance",
+            title: "Music Room",
             description:
-                "24/7 CCTV monitoring ensuring complete safety and security for every student on the school campus.",
-            image: "/facilities/cctv.png",
-            alt: "CCTV cameras installed for school security",
+                "A dedicated music room with instruments for rhythm, vocal practice, and cultural activities.",
+            image: "/images/Facilities/sport.jpeg",
+            alt: "School music room with instruments",
         },
         {
-            title: "Clean Drinking Water",
+            title: "Seminar Hall",
             description:
-                "RO + UV purified drinking water facility available throughout the school for safe hydration.",
-            image: "/facilities/drinking_water.jpeg",
-            alt: "Clean RO water facility in school",
+                "A spacious hall for presentations, workshops, guest sessions, and academic activities.",
+            image: "/images/Facilities/seminar hall.jpeg",
+            alt: "School seminar hall with seating",
         },
         {
-            title: "Medical Room",
+            title: "Welcoming Learning Spaces",
             description:
-                "Dedicated medical room with first-aid support supervised by trained staff for emergencies.",
-            image: "/facilities/wellness.jpg",
-            alt: "School medical room with first aid kits",
+                "Bright and welcoming spaces create a warm environment for young learners throughout the campus.",
+            image: "/images/Facilities/WhatsApp Image 2026-05-26 at 2.04.13 PM (2).jpeg",
+            alt: "Welcoming school learning space",
         },
     ];
 

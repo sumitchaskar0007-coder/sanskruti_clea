@@ -41,7 +41,7 @@ const Admissions = () => {
             transition={{ duration: 0.8 }}
             className="text-5xl font-bold mb-4"
           >
-            Begin Your Journey with Jadhavar
+            Begin Your Journey with Sanskruti
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -73,7 +73,7 @@ const Admissions = () => {
               { step: '1', title: 'Inquiry', description: 'Fill out the inquiry form or visit our campus' },
               { step: '2', title: 'Application', description: 'Submit required documents and application form' },
               { step: '3', title: 'Assessment', description: 'Student assessment and interaction session' },
-              { step: '4', title: 'Confirmation', description: 'Receive admission confirmation and complete enrollment' },
+              { step: '4', title: 'Confirmation', description: 'Receive admission confirmation and complete enrolment' },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -317,7 +317,7 @@ const Admissions = () => {
                     <div>
                       <p className="font-semibold mb-1">Contact</p>
                       <p className="opacity-90">Phone: +91 9270776223</p>
-                      <p className="opacity-90">Email: sanskrutitechnoschool@gmail.com</p>
+                      <p className="opacity-90">Email: sanskrutitechnoschool2025@gmail.com</p>
                     </div>
                   </div>
                   <div className="bg-white bg-opacity-20 p-4 rounded-lg">

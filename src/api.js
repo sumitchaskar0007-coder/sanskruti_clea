@@ -67,18 +67,21 @@ export const careersAPI = {
 };
 
 
-// BLOG API
-export const blogAPI = {
-  getAll: () => API.get("/blogs"),
-  getById: (id) => API.get(`/blogs/${id}`),
-  create: (formData) =>
-    API.post("/blogs", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    }),
-  update: (id, formData) =>
-    API.put(`/blogs/${id}`, formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    }),
-  delete: (id) => API.delete(`/blogs/${id}`),
-};
+// Add this to your existing api.js file
 
+export const blogAPI = {
+  // Public routes
+  getAll: () => API.get('/blogs'),
+  getBySlug: (slug) => API.get(`/blogs/${slug}`),
+
+  // Admin routes
+  getAllAdmin: () => API.get('/blogs/admin/all'),
+  getById: (id) => API.get(`/blogs/admin/${id}`),
+  create: (formData) => API.post('/blogs', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  update: (id, formData) => API.put(`/blogs/${id}`, formData, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  delete: (id) => API.delete(`/blogs/${id}`)
+};

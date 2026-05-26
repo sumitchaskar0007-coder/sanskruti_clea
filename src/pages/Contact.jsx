@@ -49,10 +49,10 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: "📞", title: "Phone", details: ["+91 9270776223"] },
-    { icon: "✉️", title: "Email", details: ["sanskrutitechnoschool@gmail.com"] },
-    { icon: "📍", title: "Address", details: ["Narhe, Pune – 411011"] },
-    { icon: "🕒", title: "Office Hours", details: ["Mon – Fri: 8:00 AM – 11:00 AM", "Second & Fourth Saturday off"] },
+    { icon: "Phone", title: "Phone", details: ["+91 9270776223"] },
+    { icon: "Email", title: "Email", details: ["sanskrutitechnoschool2025@gmail.com"] },
+    { icon: "Address", title: "Address", details: ["Narhe, Pune - 411011"] },
+    { icon: "Hours", title: "Office Hours", details: ["Mon - Fri: 8:00 AM - 11:00 AM", "Second & Fourth Saturday off"] },
   ];
 
   return (
@@ -66,7 +66,7 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
           >
-            Connect With Sankruti Techno School
+            Connect With Sanskruti Techno School
           </motion.h1>
 
           <motion.p

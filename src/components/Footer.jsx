@@ -12,18 +12,17 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* School Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-30 h-20 overflow-hidden bg-white">
                 <img
                   src="/images/logo1.png"
-                  alt="Sankruti Techno School Logo"
+                  alt="Sanskruti Techno School Logo"
                   className="w-full h-full object-contain p-1"
                 />
               </div>
               <div>
-                <h6 className="text-sxl text-white">Sankruti Techno School</h6>
+                <h6 className="text-sxl text-white">Sanskruti Techno School</h6>
                 <p className="text-sm text-gray-400">Innovative Learning for Future Leaders</p>
               </div>
             </div>
@@ -33,7 +32,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -44,7 +42,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Programs */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Programs</h4>
             <ul className="space-y-2">
@@ -55,12 +52,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>Phone: +91 9270776223</li>
-              <li>Email: sanskrutitechnoschool@gmail.com</li>
+              <li>Email: sanskrutitechnoschool2025@gmail.com</li>
             </ul>
             <div className="flex space-x-4 mt-4">
               {socialLinks.map((social) => (
@@ -83,7 +79,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
           <p className="text-center text-gray-300 text-sm">
-            © {currentYear} Sankruti Techno School. All Rights Reserved.
+            &copy; {currentYear} Sanskruti Techno School. All Rights Reserved.
           </p>
         </div>
       </div>

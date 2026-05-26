@@ -71,8 +71,8 @@ const Announcements = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white pt-24 pb-12">
       {/* SEO */}
       <Helmet>
-        <title>Announcements - Jadhavar International</title>
-        <meta name="description" content="Stay updated with the latest announcements, news, and important information from Jadhavar International School." />
+        <title>Announcements - Sanskruti Techno School</title>
+        <meta name="description" content="Stay updated with the latest announcements, news, and important information from Sanskruti Techno School." />
       </Helmet>
 
       <div className="container mx-auto px-4">
@@ -87,7 +87,7 @@ const Announcements = () => {
             Announcements
           </h1>
           <p className="text-lg text-blue-700 max-w-2xl mx-auto">
-            Stay updated with the latest news and important information from Jadhavar International School.
+            Stay updated with the latest news and important information from Sanskruti Techno School.
           </p>
         </div>
 

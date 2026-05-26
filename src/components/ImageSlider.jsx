@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// 🌟 NEW UI — PERFECT BACKGROUND + CONTENT MATCH
-// Clean, balanced layout, text aligned with image focal point
-// Lighter UI, smooth animations, mobile-optimized
-
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -23,15 +19,15 @@ const ImageSlider = () => {
       title: "Robotics & AI Lab",
       subtitle: "Learn With Innovation",
       description:
-        "Hands-on learning experiences with robotics, coding, IoT and AI tools shaping young creators.",
+        "Hands-on learning experiences with robotics, coding, IoT, and AI tools shaping young creators.",
       alt: "Robotics and AI Lab",
     },
     {
       src: "/images/slider/3.jpg",
       title: "Digital Smart Campus",
-      subtitle: "Technology Driven Learning",
+      subtitle: "Technology-Driven Learning",
       description:
-        "Smart classrooms equipped with digital boards, online learning platforms and virtual labs.",
+        "Smart classrooms equipped with digital boards, online learning platforms, and virtual labs.",
       alt: "Digital Smart Campus",
     },
     {
@@ -47,23 +43,23 @@ const ImageSlider = () => {
       title: "Cultural & Creative Activities",
       subtitle: "Discover Your Talent",
       description:
-        "Fostering creativity, confidence, leadership and real-life skills through events and activities.",
+        "Fostering creativity, confidence, leadership, and real-life skills through events and activities.",
       alt: "Cultural Activities",
     },
     {
       src: "/images/slider/1.jpg",
       title: "Modern Teaching Excellence",
-      subtitle: "Experienced & Student-Centered Faculty",
+      subtitle: "Experienced and Student-Centered Faculty",
       description:
-        "Our educators follow NEP-based learning modules that promote critical thinking, curiosity and problem solving.",
+        "Our educators follow NEP-based learning modules that promote critical thinking, curiosity, and problem solving.",
       alt: "Modern Teaching Techniques",
     },
     {
-      src: "/images/slider/helth1.jpg",
-      title: "Safe & Secure Campus",
+      src: "/images/slider/health1.jpg",
+      title: "Safe and Secure Campus",
       subtitle: "A Healthy Environment to Grow",
       description:
-        "24×7 CCTV surveillance, verified staff, hygienic classrooms, transport safety and student wellness programs.",
+        "24/7 CCTV surveillance, verified staff, hygienic classrooms, transport safety, and student wellness programs.",
       alt: "Safe School Campus",
     },
   ];
@@ -105,7 +101,6 @@ const ImageSlider = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          {/* 🔹 Background */}
           <div
             className="absolute inset-0 bg-cover bg-center brightness-95"
             style={{ backgroundImage: `url(${slides[currentIndex].src})` }}
@@ -113,10 +108,8 @@ const ImageSlider = () => {
             aria-label={slides[currentIndex].alt}
           />
 
-          {/* 🔹 Gradient for smooth blend */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
 
-          {/* 🔹 Content Box */}
           <article className="relative z-10 flex items-center h-full pl-5 sm:pl-10">
             <motion.div
               initial={{ opacity: 0, x: -25 }}
@@ -140,13 +133,12 @@ const ImageSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* 🔹 Navigation Buttons */}
       <button
         onClick={goToPrevious}
         aria-label="Previous slide"
         className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full z-20 backdrop-blur-sm"
       >
-        ‹
+        &lt;
       </button>
 
       <button
@@ -154,10 +146,9 @@ const ImageSlider = () => {
         aria-label="Next slide"
         className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full z-20 backdrop-blur-sm"
       >
-        ›
+        &gt;
       </button>
 
-      {/* 🔹 Indicators */}
       <nav
         className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20"
         aria-label="Slide indicators"
@@ -178,8 +169,5 @@ const ImageSlider = () => {
     </section>
   );
 };
-
-// SEO Keywords Added
-// Keywords: school, techno school, robotics lab, AI learning, digital campus, NEP education, smart classrooms, sports coaching, cultural events, safe campus, CBSE school, modern teaching, best school, innovation learning
 
 export default ImageSlider;

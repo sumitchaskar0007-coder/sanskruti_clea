@@ -135,12 +135,12 @@ export default function FacultyPage() {
         <>
             {/* SEO HEADERS */}
             <Helmet>
-                <title>Faculty | Sankruti Techno School</title>
+                <title>Faculty | Sanskruti Techno School</title>
                 <meta
                     name="description"
-                    content="Meet the qualified and experienced faculty members of Sankruti Techno School. Our teachers are dedicated to shaping the future with quality education."
+                    content="Meet the qualified and experienced faculty members of Sanskruti Techno School. Our teachers are dedicated to shaping the future with quality education."
                 />
-                <meta name="keywords" content="School Faculty, Teachers, Staff, Education, Sankruti Techno School" />
+                <meta name="keywords" content="School Faculty, Teachers, Staff, Education, Sanskruti Techno School" />
                 <meta name="robots" content="index, follow" />
             </Helmet>
 

@@ -16,7 +16,7 @@ import WhyJadhavar from './pages/WhyJadhavar'
 import Curriculum from './pages/Curriculum'
 import Academics from './pages/Academics'
 import Admissions from './pages/Admissions'
-import FacilitiesPage from './pages/Facilites'
+import FacilitiesPage from './pages/Facilities'
 // import FacultyPage from './pages/FacultyPage'
 import LifeAtJadhavar from './pages/LifeAtJadhavar'
 import Gallery from './pages/Gallery'
@@ -53,20 +53,23 @@ function App() {
             <Route path="/info-center" element={<InfoCenter />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogDetails />} />
+            <Route
+              path="/blog/:slug"
+              element={<BlogDetails />}
+            />
 
             {/* Admin Auth Route */}
             <Route path="/admin/login" element={<AdminLogin />} />
-            
+
             {/* Protected Admin Routes */}
             <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
-            
+
             <Route path="/admin/dashboard" element={
               <ProtectedRoutes>
                 <AdminDashboard />
               </ProtectedRoutes>
             } />
-            
+
             <Route path="/admin/gallery" element={
               <ProtectedRoutes>
                 <GalleryAdmin />
@@ -77,19 +80,19 @@ function App() {
                 <BlogAdmin />
               </ProtectedRoutes>
             } />
-            
+
             <Route path="/admin/announcements" element={
               <ProtectedRoutes>
                 <AnnouncementAdmin />
               </ProtectedRoutes>
             } />
-            
+
             <Route path="/admin/careers" element={
               <ProtectedRoutes>
                 <CareerAdmin />
               </ProtectedRoutes>
             } />
-            
+
             {/* Catch all route - redirect to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

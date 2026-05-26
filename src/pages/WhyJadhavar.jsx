@@ -77,7 +77,7 @@ const WhySanskruti = () => {
       icon: "🛡️",
       title: "Safe & Supported Environment",
       description:
-        "Student safety and wellbeing are core priorities — secure transport, health care and counselling services.",
+        "Student safety and wellbeing are core priorities, including secure transport, health care, and counseling services.",
       details: ["CCTV & security", "Health & wellness programs", "Child protection policies"],
     },
   ];

@@ -8,7 +8,7 @@ const InfoCenter = () => {
     {
       question: "What is the admission process at Sanskruti Techno School?",
       answer:
-        "Our admission process includes Inquiry and school visit, Application submission, Interaction and assessment session, and Confirmation of enrollment upon document verification and fee submission. Our admissions team provides complete support at every step.",
+        "Our admission process includes inquiry and school visit, application submission, interaction and assessment session, and confirmation of enrolment upon document verification and fee submission. Our admissions team provides complete support at every step.",
     },
     {
       question: "What extracurricular opportunities are available?",
