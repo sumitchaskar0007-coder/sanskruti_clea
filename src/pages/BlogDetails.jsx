@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { blogAPI } from '../api';
+import { resolveImageUrl } from '../utils/imageUtils';
 import './BlogDetails.css';
 
 const BlogDetails = () => {
@@ -29,70 +30,30 @@ const BlogDetails = () => {
   const fetchBlog = async () => {
     try {
       const response = await blogAPI.getBySlug(slug);
-      setBlog(response.data);
+      // Handle different response structures
+      let blogData = response.data;
+      if (response.data && response.data.blog) {
+        blogData = response.data.blog;
+      }
+      console.log('Blog details:', blogData);
+      setBlog(blogData);
       setLoading(false);
     } catch (err) {
+      console.error('Error fetching blog:', err);
       setError('Blog not found');
       setLoading(false);
     }
   };
 
-  const formatContent = (content) => {
-    // Simple parser for Medium-style content
-    const lines = content.split('\n');
-    let formattedContent = [];
-    let inQuote = false;
-    let quoteContent = [];
+  // Function to render HTML content safely
+  const createMarkup = (htmlContent) => {
+    return { __html: htmlContent };
+  };
 
-    lines.forEach((line, index) => {
-      if (line.startsWith('# ')) {
-        formattedContent.push(<h1 key={index}>{line.slice(2)}</h1>);
-      } else if (line.startsWith('## ')) {
-        formattedContent.push(<h2 key={index}>{line.slice(3)}</h2>);
-      } else if (line.startsWith('### ')) {
-        formattedContent.push(<h3 key={index}>{line.slice(4)}</h3>);
-      } else if (line.startsWith('> ')) {
-        if (!inQuote) {
-          inQuote = true;
-          quoteContent = [line.slice(2)];
-        } else {
-          quoteContent.push(line.slice(2));
-        }
-      } else if (line.startsWith('- ')) {
-        formattedContent.push(
-          <div key={index} className="blog-list-item">
-            • {line.slice(2)}
-          </div>
-        );
-      } else if (line.startsWith('```')) {
-        // Skip code blocks for now
-      } else if (line.trim() === '---') {
-        formattedContent.push(<hr key={index} className="blog-divider" />);
-      } else {
-        if (inQuote && quoteContent.length > 0) {
-          formattedContent.push(
-            <blockquote key={`quote-${index}`}>
-              {quoteContent.join(' ')}
-            </blockquote>
-          );
-          inQuote = false;
-          quoteContent = [];
-        }
-        if (line.trim()) {
-          formattedContent.push(<p key={index}>{line}</p>);
-        }
-      }
-    });
-
-    if (inQuote && quoteContent.length > 0) {
-      formattedContent.push(
-        <blockquote key="quote-last">
-          {quoteContent.join(' ')}
-        </blockquote>
-      );
-    }
-
-    return formattedContent;
+  // Function to get cover image URL
+  const getCoverImage = () => {
+    if (!blog) return null;
+    return resolveImageUrl(blog.coverImage) || resolveImageUrl(blog.featuredImage);
   };
 
   const shareOnWhatsApp = () => {
@@ -110,9 +71,7 @@ const BlogDetails = () => {
   if (error) return <div className="blog-details-error">{error}</div>;
   if (!blog) return null;
 
-  // Drop cap effect for first paragraph
-  const firstParagraph = blog.content.split('\n')[0];
-  const restContent = blog.content.split('\n').slice(1).join('\n');
+  const coverImage = getCoverImage();
 
   return (
     <>
@@ -128,60 +87,35 @@ const BlogDetails = () => {
 
             <div className="blog-meta-header">
               <div className="author-date">
-                <span className="author">{blog.author}</span>
+                <span className="author">{blog.author || 'Admin'}</span>
                 <span className="date">
-                  {new Date(blog.publishedAt).toLocaleDateString('en-US', {
+                  {new Date(blog.createdAt || blog.publishedAt).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                   })}
                 </span>
-                <span className="reading-time">{blog.readingTime} min read</span>
+                <span className="reading-time">{blog.readTime || '5 min read'}</span>
               </div>
             </div>
           </header>
 
-          {blog.featuredImage && (
+          {coverImage && (
             <figure className="blog-featured-image">
-              <img src={blog.featuredImage} alt={blog.title} />
-              {blog.images?.[0]?.caption && (
-                <figcaption>{blog.images[0].caption}</figcaption>
-              )}
+              <img 
+                src={coverImage} 
+                alt={blog.title}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'https://via.placeholder.com/800x400?text=Blog+Image';
+                }}
+              />
             </figure>
           )}
 
           <div className="blog-content">
-            <div className="blog-first-paragraph">
-              {firstParagraph && (
-                <p className="drop-cap">{firstParagraph}</p>
-              )}
-            </div>
-            {formatContent(restContent)}
-          </div>
-
-          {/* Highlight Box Example */}
-          <div className="blog-highlight-box">
-            <h3>📚 Key Takeaways</h3>
-            <p>
-              This comprehensive guide helps you understand the differences between
-              educational boards and make an informed decision for your child's future.
-            </p>
-          </div>
-
-          {/* CTA Section */}
-          <div className="blog-cta">
-            <h3>Ready to learn more about Sanskruti Techno School?</h3>
-            <div className="cta-buttons">
-              <button className="cta-button primary" onClick={() => navigate('/contact')}>
-                Book a School Visit
-              </button>
-              <button className="cta-button secondary" onClick={() => navigate('/contact')}>
-                Enquire Now
-              </button>
-              <button className="cta-button tertiary" onClick={() => navigate('/contact')}>
-                Contact Us
-              </button>
-            </div>
+            {/* Render HTML content safely */}
+            <div dangerouslySetInnerHTML={createMarkup(blog.content || '')} />
           </div>
 
           {/* Share Buttons */}

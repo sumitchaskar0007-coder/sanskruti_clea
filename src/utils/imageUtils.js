@@ -18,3 +18,36 @@ export const getImageUrl = (imagePath) => {
 
     return `${baseUrlWithoutApi}${cleanImagePath}`;
 };
+
+export const resolveImageUrl = (image) => {
+    if (!image) return null;
+
+    if (typeof image === 'string') {
+        return getImageUrl(image);
+    }
+
+    if (typeof image === 'object') {
+        if (image.url) {
+            return getImageUrl(image.url);
+        }
+
+        if (image.data) {
+            const data = image.data;
+            if (Array.isArray(data) && data.length > 0) {
+                const first = data[0];
+                if (first?.attributes?.url) return getImageUrl(first.attributes.url);
+                if (first?.url) return getImageUrl(first.url);
+            }
+
+            if (data.attributes?.url) {
+                return getImageUrl(data.attributes.url);
+            }
+
+            if (data.url) {
+                return getImageUrl(data.url);
+            }
+        }
+    }
+
+    return null;
+};

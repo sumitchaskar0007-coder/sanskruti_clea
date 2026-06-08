@@ -33,55 +33,69 @@ const unwrapResponseItem = (response) => {
 };
 
 export const authAPI = {
-  login: (credentials) => API.post('/auth/login', credentials),
-  verify: () => API.get('/auth/verify'),
+  login: (credentials) => API.post('/api/auth/login', credentials),
+  verify: () => API.get('/api/auth/verify'),
 };
 
 export { unwrapResponseList, unwrapResponseItem };
 
 export const galleryAPI = {
-  getAll: () => API.get('/gallery'),
+  getAll: () => API.get('/api/gallery'),
   create: (formData) =>
-    API.post('/gallery', formData, {
+    API.post('/api/gallery', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     }),
   update: (id, formData) =>
-    API.put(`/gallery/${id}`, formData, {
+    API.put(`/api/gallery/${id}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     }),
-  delete: (id) => API.delete(`/gallery/${id}`),
+  delete: (id) => API.delete(`/api/gallery/${id}`),
 };
 
 export const announcementsAPI = {
-  getAll: () => API.get('/announcements'),
-  create: (data) => API.post('/announcements', data),
-  update: (id, data) => API.put(`/announcements/${id}`, data),
-  delete: (id) => API.delete(`/announcements/${id}`),
+  getAll: () => API.get('/api/announcements'),
+  create: (data) => API.post('/api/announcements', data),
+  update: (id, data) => API.put(`/api/announcements/${id}`, data),
+  delete: (id) => API.delete(`/api/announcements/${id}`),
 };
 
 export const careersAPI = {
-  getAll: () => API.get('/careers'),
-  create: (data) => API.post('/careers', data),
-  update: (id, data) => API.put(`/careers/${id}`, data),
-  delete: (id) => API.delete(`/careers/${id}`),
+  getAll: () => API.get('/api/careers'),
+  create: (data) => API.post('/api/careers', data),
+  update: (id, data) => API.put(`/api/careers/${id}`, data),
+  delete: (id) => API.delete(`/api/careers/${id}`),
 };
 
-
-// Add this to your existing api.js file
-
 export const blogAPI = {
-  // Public routes
-  getAll: () => API.get('/blogs'),
-  getBySlug: (slug) => API.get(`/blogs/${slug}`),
+  // Public routes - Get all published blogs
+  getAll: async () => {
+    try {
+      const response = await API.get('/api/blogs');
+      // The backend returns { blogs: [], totalPages, currentPage, total }
+      if (response.data && response.data.blogs) {
+        return { data: response.data.blogs };
+      }
+      return response;
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+      throw error;
+    }
+  },
+  
+  getBySlug: (slug) => API.get(`/api/blogs/${slug}`),
 
   // Admin routes
-  getAllAdmin: () => API.get('/blogs/admin/all'),
-  getById: (id) => API.get(`/blogs/admin/${id}`),
-  create: (formData) => API.post('/blogs', formData, {
-    headers: { 'Content-Type': 'multipart/form-data' }
+  getAllAdmin: () => API.get('/api/blogs/admin/all'),
+  getById: (id) => API.get(`/api/blogs/admin/${id}`),
+  create: (formData) => API.post('/api/blogs', formData, {
+    headers: { 
+      'Content-Type': 'multipart/form-data'
+    }
   }),
-  update: (id, formData) => API.put(`/blogs/${id}`, formData, {
-    headers: { 'Content-Type': 'multipart/form-data' }
+  update: (id, formData) => API.put(`/api/blogs/${id}`, formData, {
+    headers: { 
+      'Content-Type': 'multipart/form-data'
+    }
   }),
-  delete: (id) => API.delete(`/blogs/${id}`)
+  delete: (id) => API.delete(`/api/blogs/${id}`)
 };
