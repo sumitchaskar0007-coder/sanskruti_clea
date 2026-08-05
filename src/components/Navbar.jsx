@@ -66,6 +66,7 @@ const Navbar = () => {
   // Additional dropdown links
   const moreLinks = [
     { label: "Gallery", path: "/gallery" },
+    { label: "Videos", path: "/videos" },
     { label: "Blog", path: "/blog" },
     { label: "Announcements", path: "/announcements" },
     { label: "Careers", path: "/career" }
@@ -81,6 +82,7 @@ const Navbar = () => {
     { path: "/books/Udan6.pdf", label: "Udan 6" },
     { path: "/books/Udan7.pdf", label: "Udan 7" },
     { path: "/books/Udan8.pdf", label: "Udan 8" },
+    { path: "/books/Udan9.pdf", label: "Udan 9" },
   ];
 
   return (

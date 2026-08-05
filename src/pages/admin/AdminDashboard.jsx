@@ -78,7 +78,7 @@ const AdminDashboard = () => {
               </div>
             </Link>
 
-            {/* BLOG CARD (NEW) */}
+            {/* BLOG CARD */}
             <Link to="/admin/blog" className="bg-white shadow rounded-lg hover:shadow-lg transition">
               <div className="p-6 flex items-center">
                 <div className="bg-orange-500 rounded-md p-3">
@@ -90,6 +90,22 @@ const AdminDashboard = () => {
                 <div className="ml-4">
                   <p className="text-sm text-gray-500">Blog</p>
                   <p className="text-lg font-semibold">Manage Blogs</p>
+                </div>
+              </div>
+            </Link>
+
+            {/* VIDEOS CARD (NEW) */}
+            <Link to="/admin/videos" className="bg-white shadow rounded-lg hover:shadow-lg transition">
+              <div className="p-6 flex items-center">
+                <div className="bg-pink-500 rounded-md p-3">
+                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm text-gray-500">Videos</p>
+                  <p className="text-lg font-semibold">Manage Videos</p>
                 </div>
               </div>
             </Link>

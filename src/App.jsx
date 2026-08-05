@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoutes from './components/ProtectedRoutes';
-
+import Videos from './pages/Videos';
+import VideosAdmin from './pages/admin/VideosAdmin';
 // Admin Pages
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminLogin from './pages/admin/AdminLogin';
@@ -46,6 +47,8 @@ function App() {
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/facilities" element={<FacilitiesPage />} />
             {/* <Route path="/faculty" element={<FacultyPage />} /> */}
+            <Route path="/videos" element={<Videos />} />
+
             <Route path="/life-at-jadhavar" element={<LifeAtJadhavar />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/announcements" element={<Announcements />} />
@@ -67,6 +70,11 @@ function App() {
             <Route path="/admin/dashboard" element={
               <ProtectedRoutes>
                 <AdminDashboard />
+              </ProtectedRoutes>
+            } />
+            <Route path="/admin/videos" element={
+              <ProtectedRoutes>
+                <VideosAdmin />
               </ProtectedRoutes>
             } />
 

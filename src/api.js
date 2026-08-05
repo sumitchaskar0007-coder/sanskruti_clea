@@ -81,21 +81,66 @@ export const blogAPI = {
       throw error;
     }
   },
-  
+
   getBySlug: (slug) => API.get(`/api/blogs/${slug}`),
 
   // Admin routes
   getAllAdmin: () => API.get('/api/blogs/admin/all'),
   getById: (id) => API.get(`/api/blogs/admin/${id}`),
   create: (formData) => API.post('/api/blogs', formData, {
-    headers: { 
+    headers: {
       'Content-Type': 'multipart/form-data'
     }
   }),
   update: (id, formData) => API.put(`/api/blogs/${id}`, formData, {
-    headers: { 
+    headers: {
       'Content-Type': 'multipart/form-data'
     }
   }),
   delete: (id) => API.delete(`/api/blogs/${id}`)
+};
+
+export const videosAPI = {
+  // Public - active videos only
+  getAll: async () => {
+    try {
+      const response = await API.get('/api/videos');
+      if (response.data && response.data.videos) {
+        return { data: response.data.videos };
+      }
+      return response;
+    } catch (error) {
+      console.error('Error fetching videos:', error);
+      throw error;
+    }
+  },
+
+  // Admin - all videos, including inactive
+  getAllAdmin: async () => {
+    try {
+      const response = await API.get('/api/videos/admin/all');
+      if (response.data && response.data.videos) {
+        return { data: response.data.videos };
+      }
+      return response;
+    } catch (error) {
+      console.error('Error fetching admin videos:', error);
+      throw error;
+    }
+  },
+
+  getById: (id) => API.get(`/api/videos/admin/${id}`),
+
+  // formData can include: title, description, videoType ('upload' | 'url'),
+  // videoUrl (when videoType === 'url'), video (file, when videoType === 'upload'),
+  // thumbnail (optional file), order
+  create: (formData) =>
+    API.post('/api/videos', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+  update: (id, formData) =>
+    API.put(`/api/videos/${id}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }),
+  delete: (id) => API.delete(`/api/videos/${id}`),
 };
