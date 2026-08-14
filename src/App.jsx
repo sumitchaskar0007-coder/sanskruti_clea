@@ -25,6 +25,7 @@ import Announcements from './pages/Announcements'
 import Career from './pages/Career'
 import InfoCenter from './pages/InfoCenter'
 import Contact from './pages/Contact'
+import ClassXI from './pages/ClassXI'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from "./components/ScrollToTop";
@@ -43,6 +44,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/why-jadhavar" element={<WhyJadhavar />} />
             <Route path="/curriculum" element={<Curriculum />} />
+            <Route path="/early-years" element={<Curriculum />} />
+            <Route path="/primary-years" element={<Curriculum />} />
+            <Route path="/middle-years" element={<Curriculum />} />
+            <Route path="/class-xi" element={<ClassXI />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/facilities" element={<FacilitiesPage />} />
